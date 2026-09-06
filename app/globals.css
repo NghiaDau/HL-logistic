@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+/* ==================================================================
+   DESIGN SYSTEM — đổi màu / bo góc / bóng đổ ở một chỗ (Tailwind v4)
+================================================================== */
+@theme {
+  /* Thương hiệu */
+  --color-brand: #1366d6;
+  --color-brand-dark: #0b3e86;
+  --color-brand-darker: #06255c;
+  --color-brand-light: #eaf2fe;
+  --color-brand-100: #d9e8fd;
+
+  /* Nhấn (nút Gọi / Zalo, điểm nhấn thị giác) */
+  --color-cta: #f97316;
+  --color-cta-dark: #ea580c;
+
+  /* Trung tính */
+  --color-ink: #0f1b2d;
+  --color-muted: #58697f;
+  --color-line: #e5eaf2;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f8fc;
+  --color-surface-2: #eef2f8;
+
+  /* Bóng đổ */
+  --shadow-soft: 0 1px 2px rgba(15, 27, 45, 0.06),
+    0 8px 24px -12px rgba(15, 27, 45, 0.12);
+  --shadow-card: 0 2px 6px -2px rgba(15, 27, 45, 0.08),
+    0 18px 40px -16px rgba(11, 62, 134, 0.18);
+  --shadow-float: 0 30px 70px -24px rgba(6, 37, 92, 0.35);
+  --shadow-cta: 0 14px 30px -10px rgba(249, 115, 22, 0.55);
+
+  --font-sans: var(--font-be-vietnam-pro), system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ------------------------------------------------------------------
+   Base
+------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+*:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-brand) 55%, transparent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ------------------------------------------------------------------
+   Layout helpers
+------------------------------------------------------------------ */
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section-pad {
+  padding-block: 4rem;
+}
+@media (min-width: 768px) {
+  .section-pad {
+    padding-block: 6rem;
+  }
+}
+
+/* Nhãn nhỏ phía trên tiêu đề section */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  background: var(--color-brand-light);
+  color: var(--color-brand-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.gradient-text {
+  background: linear-gradient(92deg, #8cc6ff 0%, #4aa3ff 45%, #1f86ec 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ------------------------------------------------------------------
+   Cards
+------------------------------------------------------------------ */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+    border-color: color-mix(in srgb, var(--color-brand) 30%, var(--color-line));
+  }
+}
+
+/* ------------------------------------------------------------------
+   Buttons
+------------------------------------------------------------------ */
+.btn-cta,
+.btn-outline,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 54px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-cta {
+  background: linear-gradient(180deg, #fb8534 0%, var(--color-cta) 55%, var(--color-cta-dark) 100%);
+  color: #fff;
+  box-shadow: var(--shadow-cta);
+}
+.btn-cta:hover {
+  box-shadow: 0 18px 38px -10px rgba(249, 115, 22, 0.65);
+}
+.btn-cta:active {
+  transform: translateY(1px);
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--color-brand-dark);
+  border: 2px solid color-mix(in srgb, var(--color-brand) 35%, transparent);
+}
+.btn-outline:hover {
+  background: var(--color-brand-light);
+  border-color: var(--color-brand);
+}
+.btn-outline:active {
+  transform: translateY(1px);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ------------------------------------------------------------------
+   Decorative backgrounds
+------------------------------------------------------------------ */
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.bg-grid-dark {
+  background-image: linear-gradient(
+      to right,
+      rgba(15, 27, 45, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(15, 27, 45, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.bg-dots {
+  background-image: radial-gradient(
+    rgba(19, 102, 214, 0.16) 1.4px,
+    transparent 1.4px
+  );
+  background-size: 22px 22px;
+}
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveal — mặc định HIỂN THỊ; chỉ ẩn/animate khi trình duyệt
+   cho phép chuyển động và JS bật (xem <noscript> trong layout).
+------------------------------------------------------------------ */
+/* Hiệu ứng cuộn thuần CSS (scroll-driven) — KHÔNG phụ thuộc JS.
+   Trình duyệt không hỗ trợ animation-timeline => nội dung hiện bình thường. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    [data-reveal] {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 22%;
+    }
+  }
+}
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Đường bay động ở hero (chỉ nét đứt chạy, không ảnh hưởng layout) */
+@media (prefers-reduced-motion: no-preference) {
+  .flight-dash {
+    stroke-dasharray: 6 10;
+    animation: flight-dash 1.4s linear infinite;
+  }
+}
+@keyframes flight-dash {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+/* Đếm số ở trust bar dùng tabular-nums cho khỏi nhảy layout */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}

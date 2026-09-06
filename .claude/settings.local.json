@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(git --version)",
+      "Bash(npm install *)",
+      "Bash(npm view *)",
+      "Bash(npm run *)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"TSC_EXIT=$?\")",
+      "Bash(node -e \"console.log\\('eslint', require\\('eslint/package.json'\\).version\\); try{console.log\\('@eslint/eslintrc', require\\('@eslint/eslintrc/package.json'\\).version\\)}catch\\(e\\){console.log\\('@eslint/eslintrc MISSING'\\)}; try{console.log\\('eslint-config-next', require\\('eslint-config-next/package.json'\\).version\\)}catch\\(e\\){console.log\\('ecn MISSING'\\)}\")",
+      "Bash(npx eslint *)",
+      "Bash(echo \"ESLINT_EXIT=$?\")",
+      "Bash(npx next *)",
+      "Bash(echo \"LINT_EXIT=$?\")",
+      "Bash(taskkill //F //IM node.exe)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\\\\\(x86\\\\\\)/Microsoft/Edge/Application/**)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(cd /tmp)",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size=1440,3200 --virtual-time-budget=5000 --screenshot=/tmp/desktop.png http://localhost:4321)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(ls -la /tmp/*.png)",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=2 --window-size=390,1800 --virtual-time-budget=5000 --screenshot=/tmp/mobile.png http://localhost:4321)",
+      "Read(//tmp/**)",
+      "Bash(cp /tmp/desktop.png \"C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad/desktop.png\")",
+      "Bash(cp /tmp/mobile.png \"C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad/mobile.png\")",
+      "Bash(mkdir -p \"C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad\" && cp /tmp/desktop.png /tmp/mobile.png \"C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad/\" && ls \"C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad/\")",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size=1440,3400 --virtual-time-budget=12000 --screenshot=C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad/desktop.png http://localhost:4321)",
+      "Bash(echo \"d=$?\")",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=2 --window-size=390,2200 --virtual-time-budget=12000 --screenshot=C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad/mobile.png http://localhost:4321)",
+      "Bash(echo \"m=$?\")",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size=1440,3400 --virtual-time-budget=8000 --screenshot=C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad/desktop.png http://localhost:4321)",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=2 --window-size=390,2400 --virtual-time-budget=8000 --screenshot=C:/Users/Admin/AppData/Local/Temp/claude/d--dev-HLLogistic/9d40082a-bfde-4574-a8da-f8431b023e0a/scratchpad/mobile.png http://localhost:4321)",
+      "Bash(taskkill //F //IM chrome.exe)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}

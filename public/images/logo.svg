@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-label="HLLogistic">
+  <!-- LOGO PLACEHOLDER (biểu tượng) — thay bằng logo thật, nền trong suốt -->
+  <rect x="0" y="0" width="48" height="48" rx="11" fill="#073d73"/>
+  <path d="M10 33l24-9-8 22-4.8-8.2z" fill="#f97316"/>
+  <path d="M34 24L14 19.5l6-1.8L42 22z" fill="#ffffff"/>
+</svg>

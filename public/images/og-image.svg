@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b5cab"/>
+      <stop offset="1" stop-color="#073d73"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <text x="80" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff">Gửi hàng đi châu Âu, Mỹ, Úc</text>
+  <text x="80" y="380" font-family="Segoe UI, Arial, sans-serif" font-size="40" fill="#ffffff" fill-opacity="0.85">Vận chuyển hàng không quốc tế cho cá nhân</text>
+  <rect x="80" y="430" width="360" height="70" rx="35" fill="#f97316"/>
+  <text x="120" y="476" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff">Gọi ngay để báo giá</text>
+</svg>
